@@ -34,41 +34,41 @@ INSERT INTO tbl_class
 	('cnidaria'),
 	('echinoderm')
 ;
-SELECT * FROM tbl_class;
+							/*SELECT * FROM tbl_class;
 
-UPDATE tbl_class SET class_type = 'birds' WHERE class_type ='bird';
+							UPDATE tbl_class SET class_type = 'birds' WHERE class_type ='bird';
 
-SELECT REPLACE (class_type, 'birds', 'bird') FROM tbl_class;
+							SELECT REPLACE (class_type, 'birds', 'bird') FROM tbl_class;
 
-SELECT UPPER(class_type)  FROM tbl_class WHERE class_type = 'birds';
+							SELECT UPPER(class_type)  FROM tbl_class WHERE class_type = 'birds';
 
-CREATE TABLE tbl_persons (
-	persons_id INT PRIMARY KEY NOT NULL IDENTITY (1,1),
-	persons_fname VARCHAR(50) NOT NULL,
-	persons_lname VARCHAR(50) NOT NULL,
-	persons_contact VARCHAR(50) NOT NULL
-);
+							CREATE TABLE tbl_persons (
+								persons_id INT PRIMARY KEY NOT NULL IDENTITY (1,1),
+								persons_fname VARCHAR(50) NOT NULL,
+								persons_lname VARCHAR(50) NOT NULL,
+								persons_contact VARCHAR(50) NOT NULL
+							);
 
-INSERT INTO tbl_persons
-	(persons_fname, persons_lname, persons_contact)
-	VALUES
-	('bob ', 'smith ', '456-456-4564'),
-	('mary ', 'ann ', '456-456-4565'),
-	('tex ', 'burns ', '456-456-4566'),
-	('gerry ', 'kerns ', '456-456-4567'),
-	('sally ', 'fields ', '456-456-4568')
-;
+							INSERT INTO tbl_persons
+								(persons_fname, persons_lname, persons_contact)
+								VALUES
+								('bob ', 'smith ', '456-456-4564'),
+								('mary ', 'ann ', '456-456-4565'),
+								('tex ', 'burns ', '456-456-4566'),
+								('gerry ', 'kerns ', '456-456-4567'),
+								('sally ', 'fields ', '456-456-4568')
+							;
 
-SELECT * FROM tbl_persons;
+							SELECT * FROM tbl_persons;
 	
-SELECT persons_fname, persons_lname, persons_contact FROM tbl_persons WHERE persons_lname LIKE '_u%s';
+							SELECT persons_fname, persons_lname, persons_contact FROM tbl_persons WHERE persons_lname LIKE '_u%s';
 
-SELECT persons_fname, persons_lname, persons_contact FROM tbl_persons WHERE persons_fname LIKE 'm%';
+							SELECT persons_fname, persons_lname, persons_contact FROM tbl_persons WHERE persons_fname LIKE 'm%';
 
-DELETE FROM tbl_persons WHERE persons_lname = 'smith';
+							DELETE FROM tbl_persons WHERE persons_lname = 'smith';
 
-DROP TABLE tbl_persons;
-
+							DROP TABLE tbl_persons;
+							*/
 
 
 CREATE TABLE tbl_order(
@@ -142,6 +142,7 @@ INSERT INTO tbl_nutrition
 
 SELECT * FROM tbl_nutrition;
 
+
 INSERT INTO tbl_habitat	
 	(habitat_type, habitat_cost)
 	VALUES
@@ -182,21 +183,20 @@ CREATE TABLE tbl_species (
 );
 
 INSERT INTO tbl_species
-	(species_name, species_animalia, species_class, species_order, species_habitat, species_nutrition, species_care)
-	VALUES
-	('brown bear', 1, 102, 3, 5007, 2200, 'care_1'),
-	('jaguar', 1, 102, 1, 5007, 2200, 'care_4'),
-	('penguin', 1, 100, 1, 5003, 2200, 'care_6'),
-	('ghost bat', 1, 102, 1, 5007, 2204, 'care_2'),
-	('chicken', 1, 100, 3, 5001, 2205, 'care_0'),
-	('panda', 1, 102, 3, 5006, 2202, 'care_4'),
-	('bobcat', 1, 102, 1, 5001, 2284, 'care_5'),
-	('grey wolf', 1, 102, 1, 5000, 2201, 'care_4')
+		(species_name, species_animalia, species_class, species_order, species_habitat, species_nutrition, species_care)
+		VALUES 
+		('brown bear', 1, 102, 3, 5007, 2200, 'care_1'),
+		('jaguar', 1, 102, 1, 5007, 2200, 'care_4'),
+		('penguin', 1, 100, 1, 5003, 2200, 'care_6'),
+		('ghost bat', 1, 102, 1, 5007, 2204, 'care_2'),
+		('chicken', 1, 100, 3, 5001, 2205, 'care_0'),
+		('panda', 1, 102, 3, 5006, 2202, 'care_4'),
+		('bobcat', 1, 102, 1, 5001, 2204, 'care_5'),
+		('grey wolf', 1, 102, 1, 5000, 2201, 'care_4')
+	;
+
 
 SELECT * FROM tbl_species;
-
-
-
 
 
 
