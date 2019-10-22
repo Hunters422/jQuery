@@ -1,0 +1,156 @@
+LINQ: Stands for Language Integrated Query. LINQ is a set of software libraries, as well as a specific system of syntax, that is used in conjunction with a programming language (such as C#) so that one can write queries against data sources - typically against databases. The syntax used to write the queries is similar to the syntax used in SQL. The data source does not have to be a database - it can be an array, an XML document or another LINQ-compatible data format. LINQ is a feature added to the .NET Framework that adds enhancements to C# and other .NET-compatible languages. LINQ is mainly used when writing queries and allows developers to interact with data stored in many common data structure formats. The advantage of it is that the way you write the queries against the data source doesn't change depending on the type of data source, so you can switch out the data source and not have to worry about then having to re write the code that queries the data source.
+
+EXAMPLE: You could use LINQ in a program to write code that queried a database hosted by SQL Server; then, at some point in the future you might find yourself having to use a completely different system for hosting your databases. You wouldn't have to change the code that queried the data source; you'd just have change the code that specifies what source of data to use. This is a very small change to make. LINQ to SQL: This is a subset of the tools provided in LINQ that apply in the case that the data source you're writing queries for will be databases that are managed by SQL Server. LINQ to SQL converts LINQ queries written in .NET-compatible languages (like C#) to SQL queries, which are then sent to SQL Server for processing against the specified database.
+
+--------------------------------------------------------------
+
+
+MySQL: SQL stands for Structured Query Language - a language used to handle data within a database. MYSQL is an open-source (source code is available to the general public for use and/or modification from its original design) database management system. MySQL can be used for many purposes. Many web sites use MySQL to link their web site to a database. This is pronounced “My-See-Quell” or “My-S-Q-L.”
+
+EXAMPLE: When you use the popular web site framework WordPress to create a web site, your site uses MySQL to store the data needed to create the site's web pages when page requests come in for your site.
+
+The DBMS is a suite of software technologies working in unison to manage the data within the database. The DBMS requires users to provide instructions on how to affect the data through GUI or Structured Query Language (SQL) instructions. There are different DBMS models being employed, such as Hierarchical, Networked, Object Oriented, and the most widely used model and the primary focus of this course, the Relational Database model.
+
+
+--------------------------------
+
+
+STRUCTURED QUERY LANGUAGE
+Structured Query Language (SQL) is a scripting language that consists of specialized characters, symbols, and syntax to provide instructions for the DBMS. These instructions are termed "statements". There are different categories of SQL statements that command the DBMS to affect, organize, and retrieve the data within the database:
+
+Data Definition Language (DDL)
+
+Data Manipulation Language (DML)
+
+Data Query Language (DQL)
+
+Data Control Language (DCL)
+
+Data Administration Commands (DAC)
+
+Transactional Control Commands (TCC)
+
+The scope for this Basic Database and SQL Course will be to discuss the common goal and usage of SQL in general.
+
+
+-------------------------------------------------
+DATA TYPE
+A Data Type is the classification and instruction that gets associated with a value, or more specifically, a unit of data. This classification and instruction defines exactly how a program should behave while encountering the value.
+
+In software development, a programming language is used to write a piece of software. That language then needs to be compiled or interpreted into a software format that the computer will recognize in order to carry out the assigned instructions. The data type will tell the compiling or interpreting software precisely how the programmer had intended to use a piece of data.
+
+Most programming languages have a standard or system for conformity. The reason for this is so that a community of developers working with a particular language will be able to share their code, offer advice, or even combine efforts on larger projects. This standard is governed by a special committee or organizational entity. For the Structured Query Language (SQL), there is the American National Standards Institute (ANSI) and the International Organization for Standardization (ISO) / International Electrotechnical Commission (IEC) , which have officially determined the standard for how SQL should be used and how data types will be interpreted.
+---------------------------------------------------
+THE MOST COMMONLY USED DATA TYPES FOR SQL ARE:
+Character(n): The character string with a specified fixed-value of bits
+
+Varchar(n): A character string with a varying number of bits
+
+Binary: A binary string with a specified fixed-value of bits
+
+Boolean: A descriptive value consisting of either a yes or a no value
+
+Integer (INT): A numeric value without a decimal that can take up no more than 4 bytes of data storage
+
+Smallint: A numeric value without a decimal that can take up no more than 2 bytes of data storage
+
+Bigint: A numeric value without a decimal that can take up no more than 8 bytes of data storage
+
+Tinyint: A numeric value without a decimal that can take up no more than 1 byte of data storage.
+
+Decimal: Numeric value with a fixed-decimal precision
+
+Float, Real, or Double: Numeric value with an approximate decimal precision
+
+Date: Stores year, month, and day values
+
+Time: Stores hour, minute, and second values
+
+Timestamp: Stores year, month, day, hour, minute, and second values
+
+Array: A collection of values with a specified fixed-length
+
+
+----------------------------------
+UNIQUE KEYS
+Unique keys are used to ensure that a table will maintain unique entries within a specific column. Consider a bank account number. Two customers with the very same bank account number would certainly become a problem, so a database may have the Bank Account field set to "unique" in order to prevent more than one record set (customer) from being assigned a bank account number that's already been taken. It is important to note that the Unique key may be assigned a Null value. A table can be assigned more than one Unique key, and the value contained within the unique field may change freely as long as it still complies with the previous criteria.
+
+PRIMARY KEYS
+Primary keys are also used to ensure that the data within a column remains unique. However, there are more restrictive characteristics associated with this key. A table may be created containing only a single Primary key. This Primary key field would have the constraint to never accept Null values. The data type assigned for a Primary key may be either an Integer or String value. The most restrictive thing about the Primary key is that once this field has been assigned a value, that value ought not be changed throughout the entire lifetime of the database.
+
+Oftentimes, the Primary key is assigned a special configuration property: an Auto Incrementing setting. Using this feature, the Primary key would have to be assigned an integer data type as the Auto Increment setting would add 1 to the previous record set number and assign the sum to the new record when the new record is being generated, thus automatically ensuring a unique primary value is being maintained.
+
+
+FOREIGN KEYS
+Foreign keys inform the database that the particular data contained within this column may be associated with data from another table’s field. This association is termed a Relationship. A foreign key is essentially a marker informing the database that there will be a link made from this field that will eventually be linked together with another table’s marker. Abstractly, you can imagine the foreign key as a thumb tack with a piece of string attached to it that trails off of the table to another tack pinned to a different field within another table. With this, the two tables can now pass information over their connected strings more quickly than without, should specific configurations be provided. These additional instructions are commonly referred to as a Foreign key “Constraint”. These special specifications are rules that the database must abide by in order to ensure that the data assigned within the particular field is always related with the values assigned within the field that has referenced it.
+
+This process is known as Referential Integrity. Referential Integrity is a process where the database is designed to ensure that all table relationships remain consistent.
+
+If a software attempts to provide instructions to the database that would break any constraint or violate the referential integrity, the database will provide an error message, cease to function until the matter has been corrected, or just ignore the command altogether. It is the developer's responsibility to ensure that his or her software interfaces and provides sound instructions to the database engine.
+
+-------------------------------------------------------
+relational types
+
+ONE-TO-MANY
+The most common relational type is One-to-Many. One-to-Many denotes how a particular row on one table will relate with multiple rows of data from another table. As the name implies, this is strictly a scenario where a single record of data leads to numerous possible rows from another table.
+
+MANY-TO-MANY
+The Many-to-Many relational type means that one particular row in a table can relate with many records from another table or vice-versa. The dilemma with the nature of a many-to-many design is that in a relational database, these tables cannot truly point to one another directly and must be indirectly associated via an additional table called a “Junction table”. With the assistance of this special intermediary table, the Many-to-Many relationship is now essentially split up into two manageable One-to-Many relationships. The two indirectly associated tables may now have single rows of data point to multiple rows within the special Junction table safely.
+
+------------------------------------
+The Primary Key simply refers to a column in your table that is guaranteed unique. The Primary Key is then used for the purposes of indexing your table which makes it much more efficient to search, sort, link, etc. So what is the Primary Key in our example? Good question. There is none. 
+
+
+-------------------------------------
+Here is a list of some of the most common data types:
+
+CHAR: This will hold between 0 and 255 characters. You have to specify the maximum amount of characters that you will be putting here when you create your column.
+
+LONG VARCHAR: This will hold as many characters as you like up to 2 gigabytes of space.
+
+BIT: This can hold a value of 0 or 1. It is primarily used for yes/no and true/false issues. It is also referred to as a Boolean or Yes/No field.
+
+FLOAT: This type is used to store decimal numbers. It is primarily used for mathematical purposes.
+
+INT: This type indicates that you are storing whole numbers here. You can store any whole number between -2147483648 and 2147483648.
+
+SMALLINT: Same as above except you are limited to numbers between -32768 and 32768.
+
+DATE: This stores a date. I know, you're shocked. Its format is YYYY-MM-DD.
+
+DATETIME: This will store a date and time. It is also commonly referred to as a TIMESTAMP since it is primarily used to Time Stamp entries or updates to a row or table. Its format is YYYY-MM-DD HH:MI:SS
+
+------------------------
+Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+-----------------------------------------------------------
+==
+The Inner Join statement is used to return data from all rows where there is matching data shared between the two table columns.
+
+SELECT * FROM table_A
+SELECT * FROM table_A INNER JOIN table_B ON table_B.id = table_A.id;
+
+==
+The OUTER JOIN statement is used to return all records of data from both tables despite whether there is any actual relational link between the two tables.
+
+SELECT table_A.username, table_A.fullname, table_B.zipcodes
+FROM table_A 
+FULL OUTER JOIN table_B
+WHERE table_B.id = table_A.id;
+
+==
+
+The LEFT JOIN statement is used to return all records of data from the left table and any related data from the right table and if there happens to be rows of data that is not matching the criteria, then it will be represented by Null values.
+
+SELECT table_A.id, table_A.username, table_B.id, table_B.phoneNumber 
+FROM table_A
+LEFT JOIN table_B ON table_B.id = table_A.id;
+
+==
+
+The RIGHT JOIN statement is used to return data from from the right table and any related data from the left table and in the event there is data that does not match it will be reflected by a Null value.
+
+SELECT table_A.wholesale, table_A.products, table_B.vendor, table_B.contact 
+FROM table_A
+RIGHT JOIN table_B ON table_B.id = table_A.id;
+WHERE table_A.id LIKE 'de%';
+--------------------------------------------------------
